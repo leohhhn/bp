@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Numbers</title>
+
+  <script src="libraries/p5.js"></script>
+  <script src="libraries/p5.dom.js"></script>
+  <script src="libraries/p5.sound.js"></script>
+  <script src="sketch.js"></script>
+  <script src="box.js"></script>
+
+  <style>
+    body {
+      margin: auto;
+      padding: 0;
+      overflow: hidden;
+      background: rgb(0, 102, 153);
+    }
+
+    ul li {
+      display: inline-block;
+    }
+
+    canvas {
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <ul style="display:inline">
+
+    <li> <input id="Base" type="text" placeholder="Base" style="
+        display: inline-block;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        margin-top:10px;
+        margin-left:20px;
+        box-sizing: content-box;
+        padding: 10px 20px;
+        border: 1px solid #b7b7b7;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        font: normal 23px/normal " Times New Roman ", Times, serif;
+        color: rgba(0,142,198,1);
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        background: rgba(252,252,252,1);
+        -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+        box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+        text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+        -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        ">
+    </li>
+    <li>
+      <button type="button" id="SetBase" style="
+      background-color: rgb(0,0,0);
+	    border: none;
+      margin:20px;
+	    color: white;F
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+	    font-size: 50px;">Set Base</button>
+    </li>
+    <li>
+      <button type="button" id="Check" style="
+      background-color: rgb(0,0,0);
+      border: none;
+      color: white;F
+      padding: 15px 32px;
+      margin:20px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;">Check</button>
+    </li>
+    <li>
+      <button type="button" id="Reset" style="
+      background-color: rgb(0,0,0);
+      border: none;
+      color: white;F
+      padding: 15px 32px;
+      margin:20px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;">Reset</button>
+    </li>
+    <li>
+      <button type="button" id="nrn" style="
+        background-color: rgb(0,0,0);
+        border: none;
+        margin-top:20px;
+
+        margin-left:20px;
+        color: white;F
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;">Next</button>
+    </li>
+
+</body>
+
+</html>
