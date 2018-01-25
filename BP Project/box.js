@@ -14,5 +14,4 @@ class Box {
         textSize(90);
         text(this.n, this.x + BOX_WIDTH / 2, this.y + BOX_HEIGHT / 2);
     }
-
 }

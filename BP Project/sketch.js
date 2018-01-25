@@ -51,12 +51,13 @@ function draw() {
 
 function underline() {
   strokeWeight(6);
-  stroke(200, 0, 0);
-  line(boxes[rows - 1][0].x+2,
-    boxes[rows - 1][0].y,
-    boxes[rows - 1][cols - 1].x + BOX_WIDTH-1,
-    boxes[rows - 1][cols - 1].y);
+
+  line(boxes[rows - 1][0].x + 2,
+    boxes[rows - 1][0].y + 2,
+    boxes[rows - 1][cols - 1].x + BOX_WIDTH - 1,
+    boxes[rows - 1][cols - 1].y + 2);
   stroke(0, 0, 0);
+  strokeWeight(3);
 
 }
 
@@ -160,18 +161,22 @@ function setNumbers() {
 
 function setBase() {
   // changes the base in which the numbers are calculated, set etc.
-  base = document.getElementById('Base').value;
-  if (base == 1) {
-    alert("Base can't be 1!");
-    base = 10;
-    document.getElementById('Base').value = "";
+  if (document.getElementById('Base').value != '') {
+    base = document.getElementById('Base').value;
+    if (base == 1) {
+      alert("Base can't be 1!");
+      base = 10;
+      document.getElementById('Base').value = "";
+    } else {
+      boxes[rows - 1].forEach(function(b) {
+        b.n = 0;
+        b.show();
+      });
+    }
+    setNumbers();
   } else {
-    boxes[rows - 1].forEach(function(b) {
-      b.n = 0;
-      b.show();
-    });
+    document.getElementById('Base').value = "10";
   }
-  setNumbers();
 }
 
 function mousePressed() {
