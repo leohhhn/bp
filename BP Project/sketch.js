@@ -16,7 +16,6 @@ function setup() {
 
     var cnv = createCanvas((cols + 1) * BOX_WIDTH + 10, rows * BOX_HEIGHT + 10);
     cnv.position(screen.width / 5, 200);
-
     boxes = [];
     for (let i = 0; i < rows; i++) {
         boxes[i] = [];
@@ -25,10 +24,11 @@ function setup() {
                 boxes[i][j] = new Box(x + 2 + j * BOX_WIDTH, y + 2 + i * BOX_HEIGHT, n, true);
             } else {
                 boxes[i][j] = new Box(x + 2 + j * BOX_WIDTH, y + 2 + i * BOX_HEIGHT, n);
-                boxes[i][j] = new Box(x + 2 + j * BOX_WIDTH, y + 2 + i * BOX_HEIGHT, n);
+                //    boxes[i][j] = new Box(x + 2 + j * BOX_WIDTH, y + 2 + i * BOX_HEIGHT, n);
             }
         }
     }
+
     setNumbers();
     strokeWeight(3);
     znak = new Box(x + 2 - BOX_WIDTH, y + 2 + BOX_HEIGHT * (rows - 2), "+", false);
@@ -48,6 +48,15 @@ function draw() {
     znak.show();
 }
 
+function underline() {
+    //    line(boxes[rows - 1][0].x,
+    //        boxes[rows - 1][0].y,
+    //        boxes[rows - 1][cols - 1].x + BOX_WIDTH,
+    //        boxes[rows - 1][cols - 1].y);
+    line(x, y, x + 30, y + 30);
+
+}
+
 function resetN() {
     // resets all user input back to the starting values
     boxes[rows - 1].forEach(function (b) {
@@ -57,6 +66,7 @@ function resetN() {
     document.getElementById('Base').value = "10";
     base = 10;
     setNumbers();
+    underline();
 }
 
 function flashBG(rorw) {
@@ -109,7 +119,6 @@ function calculate() {
         rorw = false;
         flashBG(rorw);
     }
-
 }
 
 function setNumbers() {
@@ -144,8 +153,6 @@ function setNumbers() {
         base = 10;
         document.getElementById('Base').value = "10";
     }
-
-
 }
 
 function setBase() {
@@ -188,7 +195,6 @@ function mousePressed() {
         if (znak.n == "+")
             znak.n = "-";
         else
-        if (znak.n == "-")
             znak.n = "+";
     }
 }

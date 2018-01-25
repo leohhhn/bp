@@ -14,3 +14,11 @@ class Box {
         text(this.n, this.x + BOX_WIDTH / 2, this.y + BOX_HEIGHT / 2);
     }
 }
+
+class po extends Box {
+    constructor(x, y, n, notype, p) {
+        super(x, y, n, notype);
+        this.p = p;
+        // notype - will not change when clicked
+    }
+}
