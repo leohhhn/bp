@@ -29,7 +29,6 @@ function setup() {
             }
         }
     }
-
     setNumbers();
     strokeWeight(3);
     znak = new Box(x + 2 - BOX_WIDTH, y + 2 + BOX_HEIGHT * (rows - 2), "+", false);
@@ -66,12 +65,12 @@ function flashBG(rorw) {
         document.body.style.background = color(0, 255, 0);
         setTimeout(function () {
             document.body.style.background = color(0, 102, 153);
-        }, 400);
+        }, 600);
     } else {
         document.body.style.background = color(204, 0, 0);
         setTimeout(function () {
             document.body.style.background = color(0, 102, 153);
-        }, 400);
+        }, 600);
     }
 }
 
@@ -89,7 +88,6 @@ function calculate() {
     }
 
     if (znak.n === "-") {
-        // todo: add another sign box for the result can be negative or positive
         rez = brojevi[0];
         for (let i = 1; i < brojevi.length; i++) {
             rez -= brojevi[i];
@@ -116,7 +114,6 @@ function calculate() {
 
 function setNumbers() {
     // generates random numbers and draws them into boxes
-
     brojevi = [];
     if (base <= 10) {
         boxes.forEach(function (row, i) {
@@ -131,10 +128,7 @@ function setNumbers() {
         });
         brojevi.sort((a, b) => b - a);
         brojevi.forEach(function (broj, i) {
-            const rNum = broj.toString(base)
-                .padStart(cols, 0)
-                .split('')
-                .map(c => Number(c));
+            const rNum = broj.toString(base).padStart(cols, 0).split('').map(c => Number(c));
             boxes[i].forEach(function (box, j) {
                 box.n = rNum[j];
                 box.show();
@@ -157,11 +151,7 @@ function setNumbers() {
 function setBase() {
     // changes the base in which the numbers are calculated, set etc.
     base = document.getElementById('Base').value;
-    if (base > 16) {
-        alert("Biggest base supported is 16!");
-        base = 10;
-        document.getElementById('Base').value = "";
-    } else if (base == 1) {
+    if (base == 1) {
         alert("Base can't be 1!");
         base = 10;
         document.getElementById('Base').value = "";
@@ -201,7 +191,6 @@ function mousePressed() {
         if (znak.n == "-")
             znak.n = "+";
     }
-
 }
 
 function onload() {
