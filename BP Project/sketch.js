@@ -51,14 +51,12 @@ function draw() {
 
 function underline() {
   strokeWeight(6);
-
   line(boxes[rows - 1][0].x + 2,
     boxes[rows - 1][0].y + 2,
     boxes[rows - 1][cols - 1].x + BOX_WIDTH - 1,
     boxes[rows - 1][cols - 1].y + 2);
   stroke(0, 0, 0);
   strokeWeight(3);
-
 }
 
 function resetN() {
