@@ -13,7 +13,6 @@ var znak;
 
 function setup() {
   // prebuilt function that executes once
-
   var cnv = createCanvas((cols + 1) * BOX_WIDTH + 10, rows * BOX_HEIGHT + 10);
   cnv.position(screen.width / 5, 200);
   boxes = [];
@@ -32,7 +31,6 @@ function setup() {
   strokeWeight(3);
   znak = new Box(x + 2 - BOX_WIDTH, y + 2 + BOX_HEIGHT * (rows - 2), "+", false);
   znak.show();
-
 }
 
 function draw() {
@@ -69,6 +67,8 @@ function resetN() {
   base = 10;
   setNumbers();
   underline();
+  znak.n = "+";
+  znak.show();
 }
 
 function flashBG(rorw) {
