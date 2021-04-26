@@ -1,2 +1,3 @@
 # bp
-Practice calculating in different bases!
+JavaScript GUI Application for practicing calculating in different bases by hand.
+
